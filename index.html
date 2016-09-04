@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>PRG-147 Events</title>
+    <meta charset="utf-8">
+
+    <!-- This program demonstrates reacting with JavaScript to events on a webpage.  -->
+    <meta name="description" content="MCC PRG-147 JavaScript Events by Phyllis Torres">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <!-- Link to Google Font Family -->
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+    <script src="myscripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript" src="jquery.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h1>JavaScript Reacts to Events</h1>
+
+            </div>
+
+            <div class="col-1 col-m-12">
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="container">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h2>Show Text by Clicking a Button</h2>
+
+                <p> Why did the pelican get kicked out of the restaurant?</p>
+
+                <p>&nbsp;</p>
+
+                <button class="w3-btn w3-text-shadow w3-xlarge w3-purple" onclick="jokeAnswer()">Click for the answer</button>
+
+                <p id="joke"></p>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12">
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h2>Change Text by Hovering with Mouse</h2>
+
+                <p style="text-align: center;">Use your mouse to hover over the text to see the answer.</p>
+
+                <p>&nbsp;</p>
+
+                <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#38d94b;width:200px;height:200px;padding:10px;font-weight=700em;font-size:2em;margin-left:360px;">What kind of math do birds like?</div>
+            </div>
+
+            <div class="col-1 col-m-12">
+            </div>
+
+        </div>
+
+        <div class="container" id="mydiv">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h2>Change the Container Background</h2>
+
+                <p>&nbsp;</p>
+                <!--The code here will change the div color on the button click  -->
+
+                <button class="w3-btn w3-text-shadow w3-xlarge w3-blue" onclick="changeBackground()">Click to change container background</button>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12">
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h2>Drag Text from One Area to Another</h2>
+
+                <!--The code here will change the div color on the button click  -->
+
+                <p>Drag the text back and forth between the two rectangles:</p>
+
+                <p>&nbsp;</p>
+
+                <div class="droptarget">
+                    <p draggable="true" id="dragtarget">You may drag me!</p>
+                </div>
+
+                <div class="droptarget"></div>
+
+                <p id="demo2"></p>
+
+            </div>
+
+            <div class="col-1 col-m-12">
+            </div>
+
+        </div>
+
+        <div class="container ">
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+            <div class="col-10 col-m-12 ">
+
+                <h2 id="head2">Change Text Color by Clicking a Button</h2>
+
+                <p id="para">Text colors may be changed using JavaScript.</p>
+
+                <p>&nbsp;</p>
+
+                <button class="w3-btn w3-text-shadow w3-xlarge w3-aqua" onclick="changeTextColor() ">Click to change the text color</button>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="col-10 col-m-12">
+
+                <h2>Change the Webpage Background Image</h2>
+
+                <p>&nbsp;</p>
+
+                <button class="w3-btn w3-text-shadow w3-xlarge w3-yellow" onclick="chgBackground()">Click Me to Change the Page Background</button>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+        </div>
+
+        <div class="container " onmousedown="isAltPressed(event)">
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+            <div class="col-10 col-m-12 ">
+
+                <h2>Determine if the Alt Key was Pressed</h2>
+
+                <p>Click somewhere in this container. An message will tell you if the ALT key was used at the same time as clicking the mouse.</p>
+
+                <p>&nbsp;</p>
+
+                <p id="aKey"></p>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+        <div class="container ">
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+            <div class="col-10 col-m-12 ">
+
+                <h2>Change Things with Right-Click</h2>
+
+                <p>First, click on image keeping the mouse witin the box area to read the question. Then, right-click the mouse to get the answer.</p>
+
+                <p>&nbsp;</p>
+
+                <div oncontextmenu="rightClick(this)" onmouseup="mUp(this)" style="background-color:#cd38d9;width:320px;height:320px;padding:40px;font-weight:600;font-size:1.5em;font-family:'Philosopher';">Click Me for a Funny Joke!</div>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+        <div class="container ">
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+            <div class="col-10 col-m-12 ">
+
+                <h2>Change Image by Moving Mouse Up and Down</h2>
+
+                <p>Click mouse on image and hold down to see a new image. </p>
+
+                <p>&nbsp;</p>
+
+                <img id="myimage" onmousedown="bearyelling()" onmouseup="bears()" src="bears.jpg" alt="bears in the water" width="300" />
+
+                <p>&nbsp;</p>
+
+                <p>To keep the new image, click mouse and hold down button over image, and drag down. To return to the original image, click somewhere below image, hold down button, and drag mouse up and over the image.</p>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+        <div class="container ">
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+            <div class="col-10 col-m-12 ">
+
+                <h2>An Event Triggered by Double Clicking on an Object</h2>
+
+                <p>&nbsp;</p>
+
+                <p ondblclick="drink()">Double-click on this sentence if you would like something to drink.</p>
+
+                <p>&nbsp;</p>
+
+                <p id="drinks"></p>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+        <div class="container ">
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+            <div class="col-10 col-m-12 ">
+
+                <h2>An Reaction Triggered by Pressing a Key</h2>
+
+                <p>&nbsp;</p>
+
+                <p>Position mouse over input field and press any key.</p>
+
+                <p>&nbsp;</p>
+
+                <input type="text" onkeydown="pressKey()">
+
+                <p>&nbsp;</p>
+
+                <p id="pKey"></p>
+
+                <p>&nbsp;</p>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h2>Change an Image with a Mouse Hover</h2>
+
+                <p style="text-align:center;">Use your mouse to hover over the image for a surprise!</p>
+
+                <p>&nbsp;</p>
+
+                <a href="#"><img src="pelican.jpg" alt="pelican" id="pelican" onmouseover="swap1()" onmouseout="swap2()" style="max-width:75%;margin-left:110px;"></a>
+
+            </div>
+
+            <div class="col-1 col-m-12">
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="col-1 col-m-12">
+            </div>
+
+            <div class="col-10 col-m-12">
+
+                <h2>Drag and Drop an Image</h2>
+
+                <p style="text-align: center;">Drag the image back and forth between the two rectangles:</p>
+
+                <p>&nbsp;</p>
+
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="dragon.jpg" alt="cute dragon cartoon" draggable="true" ondragstart="drag(event)" id="drag1">
+                </div>
+
+                <div id="div2" ondrop="drop(event) " ondragover="allowDrop(event) "></div>
+
+            </div>
+
+            <div class="col-1 col-m-12 ">
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="container ">
+
+            <div class="col-12 col-m-12 ">
+
+                <p style="font-size:1.25em; text-align:center; ">Copyright 2016 ~ Phyllis Torres</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
